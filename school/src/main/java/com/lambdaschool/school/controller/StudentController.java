@@ -45,7 +45,7 @@ public class StudentController
     }
 
     @ApiOperation(value = "Returns a sudent by ID", response = Student.class)
-    @GetMapping(value = "/Student/{StudentId}",
+    @GetMapping(value = "/student/{studentId}",
                 produces = {"application/json"})
     public ResponseEntity<?> getStudentById(
             @PathVariable
@@ -71,7 +71,7 @@ public class StudentController
             @ApiResponse(code = 201, message = "Student Created Successfully", response = void.class),
             @ApiResponse(code = 500, message = "Error creating Student", response = ErrorDetail.class)
     })
-    @PostMapping(value = "/Student",
+    @PostMapping(value = "/student",
                  consumes = {"application/json"},
                  produces = {"application/json"})
     public ResponseEntity<?> addNewStudent(@Valid
@@ -93,7 +93,7 @@ public class StudentController
             @ApiResponse(code = 201, message = "Student Updated Successfully", response = void.class),
             @ApiResponse(code = 500, message = "Error updating Student", response = ErrorDetail.class)
     })
-    @PutMapping(value = "/Student/{Studentid}")
+    @PutMapping(value = "/student/{studentid}")
     public ResponseEntity<?> updateStudent(
             @RequestBody
                     Student updateStudent,
@@ -109,7 +109,7 @@ public class StudentController
             @ApiResponse(code = 201, message = "Student Deleted Successfully", response = void.class),
             @ApiResponse(code = 500, message = "Error creating Student", response = ErrorDetail.class)
     })
-    @DeleteMapping("/Student/{Studentid}")
+    @DeleteMapping("/student/{studentid}")
     public ResponseEntity<?> deleteStudentById(
             @PathVariable
                     long Studentid)

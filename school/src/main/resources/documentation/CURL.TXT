@@ -1,0 +1,32 @@
+// Get authentication token for admin
+curl -X POST --user "lambda-client:lambda-secret" -d "grant_type=password&username=user&password=password" http://schooldeploy.herokuapp.com/oauth/token
+
+// /courses/courses
+curl -X GET -H "Accept: application/json" -H "Authorization: Bearer fdb96067-50f8-42c7-8aba-a1f93d90a202" http://schooldeploy.herokuapp.com/courses/courses
+
+// /courses/studcount
+curl -X GET -H "Accept: application/json" -H "Authorization: Bearer fdb96067-50f8-42c7-8aba-a1f93d90a202" http://schooldeploy.herokuapp.com/courses/studcount
+
+// /courses/{courseid}
+curl -X DELETE -H "Authorization: Bearer fdb96067-50f8-42c7-8aba-a1f93d90a202" http://schooldeploy.herokuapp.com/courses/{1}
+
+// /students/students
+curl -X GET -H "Accept: application/json" -H "Authorization: Bearer fdb96067-50f8-42c7-8aba-a1f93d90a202" http://schooldeploy.herokuapp.com/students/students
+
+// /students/student/{studentId}
+curl -X GET -H "Accept: application/json" -H "Authorization: Bearer fdb96067-50f8-42c7-8aba-a1f93d90a202" http://schooldeploy.herokuapp.com/students/student/{1}
+
+// /student/namelike/{name}
+curl -X GET -H "Accept: application/json" -H "Authorization: Bearer fdb96067-50f8-42c7-8aba-a1f93d90a202" http://schooldeploy.herokuapp.com/students/student/namelike/john
+
+// /students/student
+curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer fdb96067-50f8-42c7-8aba-a1f93d90a202" -d "{ \"studname\":\"name\"l}" http://schooldeploy.herokuapp.com/students/student
+
+// /students/student/{studentid}
+curl -X PUT -H "Content-Type: application/json" -H "Authorization: Bearer fdb96067-50f8-42c7-8aba-a1f93d90a202" -d "{ \"studname\":\"name\"l}" http://schooldeploy.herokuapp.com/students/student/{2}
+
+
+// /students/student/{studentid}
+curl -X DELETE -H "Authorization: Bearer fdb96067-50f8-42c7-8aba-a1f93d90a202" http://schooldeploy.herokuapp.com/students/student/{2}
+
+fdb96067-50f8-42c7-8aba-a1f93d90a202
